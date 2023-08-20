@@ -1,0 +1,19 @@
+class Solution{
+  public:
+    vector<int> duplicates(int arr[], int n) {
+        map<int,int> mp;
+        vector<int> ans;
+        for(int i=0;i<n;i++){
+            mp[arr[i]]++;
+        }
+        
+        for(auto it=mp.begin();it!=mp.end();it++){
+            if(it->second>=2) ans.push_back(it->first);
+        }
+        if(ans.empty()) return {-1};
+        return ans;
+    }
+};
+
+
+Q-link::https://practice.geeksforgeeks.org/problems/find-duplicates-in-an-array/1?page=1&sortBy=submissions
